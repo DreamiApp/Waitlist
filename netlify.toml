@@ -1,0 +1,18 @@
+# netlify.toml
+
+# Build settings (if you have any)
+[build]
+  publish = "."
+
+# Force all traffic to HTTPS
+[[redirects]]
+  from     = "http://dreamiapp.com/*"
+  to       = "https://dreamiapp.com/:splat"
+  status   = 301
+  force    = true
+
+[[redirects]]
+  from     = "http://www.dreamiapp.com/*"
+  to       = "https://www.dreamiapp.com/:splat"
+  status   = 301
+  force    = true

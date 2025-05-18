@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta 
+    name="viewport" 
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+  />
+
+  <title>Dreami Waitlist</title>
+  <meta 
+    name="description" 
+    content="Instant insights into hidden dream symbols, emotions & patterns—join the Dreami waitlist today." 
+  />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dreami – AI Dream Interpretation App" />
+  <meta 
+    property="og:description" 
+    content="Unlock the hidden meanings of your dreams. Join the Dreami waitlist now!" 
+  />
+  <meta property="og:image"   content="https://yourdomain.com/assets/og-image.png" />
+  <meta property="og:url"     content="https://yourdomain.com" />
+  <meta property="og:type"    content="website" />
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link 
+    rel="preconnect" 
+    href="https://fonts.gstatic.com" 
+    crossorigin 
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Preload & CSS -->
+  <link 
+    rel="preload" 
+    as="style" 
+    href="css/styles.css" 
+  />
+  <link 
+    rel="stylesheet" 
+    href="css/styles.css" 
+  />
+
+  <!-- Favicon & Theme -->
+  <link rel="icon" sizes="32x32" href="assets/favicon-32.png" />
+  <meta name="theme-color" content="#150021" />
+</head>
+<body>
+  <noscript>
+    <div style="padding:1rem; background:#ffebeb; color:#900; text-align:center;">
+      JavaScript is required to join the waitlist—please enable it and reload.
+    </div>
+  </noscript>
+
+  <div class="container">
+    <header>
+      <img 
+        src="assets/splash.png" 
+        alt="Dreami logo — a moon, cloud, and star" 
+        class="logo" 
+      />
+      <h1>Bringing clarity to your dreams with AI</h1>
+      <p class="subhead">
+        Instant insights into hidden symbols, emotions &amp; patterns—join the waitlist today.
+      </p>
+    </header>
+
+    <form id="waitlist-form" novalidate>
+      <label for="email" class="visually-hidden">Email address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+      />
+      <button type="submit">Join the Waitlist</button>
+      <p 
+        id="feedback" 
+        class="feedback" 
+        role="status" 
+        aria-live="polite"
+      ></p>
+    </form>
+  </div>
+
+  <!-- Your JS -->
+  <script src="js/app.js" defer></script>
+</body>
+</html>

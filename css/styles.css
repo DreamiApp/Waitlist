@@ -1,0 +1,341 @@
+/*──────────────────────────────────────────────────────────────────────────────
+  Dreami Waitlist Stylesheet
+──────────────────────────────────────────────────────────────────────────────*/
+
+/*──────────────────────────────────────────────────────────────────────────────
+  1. CSS Variables
+──────────────────────────────────────────────────────────────────────────────*/
+:root {
+  /* Colors */
+  --purple-bg: #150021;
+  --purple-accent-start: #8A2BE2;
+  --purple-accent-end:   #A64AC9;
+  --white-trans-1: rgba(255, 255, 255, 0.08);
+  --white-trans-2: rgba(255, 255, 255, 0.2);
+  --white-trans-3: rgba(255, 255, 255, 0.3);
+  --feedback-color:   #FFB3B3;
+
+  /* Typography */
+  --font-body:       "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-base:  1rem;
+  --font-size-lg:    1.75rem;
+
+  /* Radii & Spacing */
+  --radius: 8px;
+
+  /* Shadows */
+  --shadow-purple-light: rgba(166, 74, 201, 0.5);
+  --shadow-purple-dark:  rgba(138, 43, 226, 0.4);
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  2. Reset & Base
+──────────────────────────────────────────────────────────────────────────────*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--purple-bg);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  3. Visually Hidden Utility (for screen-reader labels)
+──────────────────────────────────────────────────────────────────────────────*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  4. Container / Card
+──────────────────────────────────────────────────────────────────────────────*/
+.container {
+  width: 90%;
+  max-width: 400px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: var(--white-trans-1);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--white-trans-2);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  5. Header (Logo + Title)
+──────────────────────────────────────────────────────────────────────────────*/
+header {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  height: 64px;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: var(--font-size-lg);
+  margin-bottom: 1rem;
+}
+
+p.subhead {
+  font-size: var(--font-size-base);
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  6. Form Layout
+──────────────────────────────────────────────────────────────────────────────*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  7. Input Styles
+──────────────────────────────────────────────────────────────────────────────*/
+input[type="email"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: var(--font-size-base);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--white-trans-2);
+  color: #fff;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="email"]:focus {
+  background: var(--white-trans-3);
+  box-shadow: 0 0 0 3px rgba(164, 139, 240, 0.4);
+  outline: none;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  8. Feedback Message
+──────────────────────────────────────────────────────────────────────────────*/
+.feedback {
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  color: var(--feedback-color);
+  margin-top: 0.5rem;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  9. Button Styles & Animations
+──────────────────────────────────────────────────────────────────────────────*/
+button {
+  width: 100%;
+  padding: 1rem;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    90deg,
+    var(--purple-accent-start),
+    var(--purple-accent-end)
+  );
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  /* Glow */
+  box-shadow:
+    0 0 12px var(--shadow-purple-dark),
+    0 0 24px var(--shadow-purple-light);
+  animation: glow-purple 3s ease-in-out infinite alternate;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Shine Sweep */
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+}
+
+button:hover::before {
+  animation: shine 0.8s forwards;
+}
+
+/* Glow Animation */
+@keyframes glow-purple {
+  from {
+    box-shadow:
+      0 0 6px var(--shadow-purple-light),
+      0 0 18px var(--shadow-purple-dark);
+  }
+  to {
+    box-shadow:
+      0 0 16px var(--shadow-purple-dark),
+      0 0 32px var(--shadow-purple-light);
+  }
+}
+
+/* Shine Animation */
+@keyframes shine {
+  to {
+    left: 200%;
+  }
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  10. Reduced Motion for Accessibility
+──────────────────────────────────────────────────────────────────────────────*/
+@media (prefers-reduced-motion: reduce) {
+  button,
+  button::before {
+    animation: none;
+    transition: none;
+  }
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  11. Responsive Tweaks for Small Screens
+──────────────────────────────────────────────────────────────────────────────*/
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  input,
+  button {
+    padding: 0.75rem;
+  }
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  Admin View Enhancements
+──────────────────────────────────────────────────────────────────────────────*/
+
+/* Narrow container slightly for admin */
+.admin-container {
+  max-width: 800px;
+}
+
+/* Header layout */
+.admin-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-header .logo {
+  height: 48px;
+}
+
+.admin-title h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.admin-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.admin-controls input[type="search"] {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--white-trans-2);
+  background: var(--white-trans-2);
+  color: #fff;
+  font-size: var(--font-size-base);
+  outline: none;
+}
+
+.admin-controls input[type="search"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.admin-controls button#refresh-btn {
+  padding: 0.5rem 1rem;
+  background: var(--purple-accent-start);
+  border: none;
+  border-radius: var(--radius);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.admin-controls button#refresh-btn:hover {
+  background: var(--purple-accent-end);
+}
+
+/* Scrollable table container */
+.table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--white-trans-2);
+  border-radius: var(--radius);
+}
+
+#waitlist-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#waitlist-table th,
+#waitlist-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--white-trans-2);
+  text-align: left;
+}
+
+#waitlist-table th {
+  position: sticky;
+  top: 0;
+  background: var(--white-trans-1);
+  backdrop-filter: blur(6px);
+  color: #150021;
+  z-index: 1;
+}
+
+#waitlist-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Feedback repositioned */
+#admin-feedback {
+  margin-top: 1rem;
+  text-align: center;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Dreami Admin – Waitlist</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container admin-container">
+    <header class="admin-header">
+      <img src="assets/splash.png" alt="Dreami Logo" class="logo" />
+      <div class="admin-title">
+        <h1>Admin Dashboard</h1>
+        <p class="subhead">Manage Waitlist Sign-ups</p>
+      </div>
+    </header>
+
+    <div class="admin-controls">
+      <input
+        type="search"
+        id="search-email"
+        placeholder="Search by email…"
+      />
+      <button id="refresh-btn">Refresh</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="waitlist-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Joined At</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <p id="admin-feedback" class="feedback" role="status" aria-live="polite"></p>
+  </div>
+
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
